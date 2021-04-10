@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Nesti_mes_recettes</string>
+
+    <string name="nesti">NESTI</string>
+
+    <string name="txt_btn_gluten">Sans gluten</string>
+    <string name="txt_btn_easy">Facile à faire</string>
+    <string name="txt_btn_traditional">Traditionnelles</string>
+    <string name="txt_btn_season">C\'est la saison</string>
+    <string name="txt_titre">Choisir une catégorie</string>
+
+    <string name="txt_menu_search">Rechercher une recette</string>
+    <string name="txt_menu_list">Liste des courses</string>
+    <string name="txt_menu_presentation">Présentation</string>
+
+    <string name="txt_menu_contact">Contact</string>
+    <string name="txt_menu_team">L\'équipe</string>
+    <string name="txt_menu_project">Projet</string>
+
+    <string name="txt_title_easy">Liste des recettes faciles</string>
+    <string name="txt_btn_retour">Retour</string>
+    <string name="traditionnelles">Traditionnelles</string>
+    <string name="c_est_la_saison">C\'est la saison</string>
+    <string name="sans_gluten">Sans gluten</string>
+    <string name="image_de_recette">Image de recette</string>
+    <string name="titre">Titre</string>
+    <string name="auteur">auteur</string>
+    <string name="star">Star</string>
+    <string name="title_activity_tab_recipe">TabRecipeActivity</string>
+    <string name="tab_text_2">Préparations</string>
+    <string name="tab_text_1">Ingrédients</string>
+    <string name="btn_tabrecipe_caddie">Caddie</string>
+    <string name="liste_course">Liste des courses</string>
+    <string name="textview">TextView</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="qty">qty</string>
+    <string name="plus">plus</string>
+    <string name="txt_placeholder_recipe_name">Nom d\'une recette</string>
+    <string name="recherche">Recherche</string>
+    <string name="quelle_recette_chercher_vous">Quelle recette chercher vous ?</string>
+    <string name="r_sultats_de_recherche">Résultats de recherche</string>
+    <string name="recette">recette</string>
+    <string name="voir">Voir</string>
+    <string name="vider_la_liste">Vider la liste</string>
+    <string name="check">Check</string>
+    <string name="checkedtextview">CheckedTextView</string>
+</resources>
