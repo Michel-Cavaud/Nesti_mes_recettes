@@ -21,21 +21,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Bundle extras = new Bundle();
         final Button btnEasy = (Button)findViewById(R.id.main_btn_easy);
         btnEasy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+               /* final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
                 alertDialog.setTitle("Facile à faire");
                 alertDialog.setMessage("Voulez-vous choisir une recette facile à faire ?");
                 alertDialog.setPositiveButton("oui", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MainActivity.this, EasyActivity.class);
+                    public void onClick(DialogInterface dialog, int which) {*/
+                        Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
+                        extras.putString("cat", "facile");
+                        extras.putString("titre", "Les recettes faciles");
+                        intent.putExtras(extras);
                         startActivity(intent);
-                       Toast.makeText(getApplicationContext(), btnEasy.getText(), Toast.LENGTH_SHORT).show();
+                     /*  Toast.makeText(getApplicationContext(), btnEasy.getText(), Toast.LENGTH_SHORT).show();
                     }
                 });
                 alertDialog.setNegativeButton("non", new DialogInterface.OnClickListener() {
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
-                alertDialog.show();
+                alertDialog.show();*/
             }
         });
 
@@ -51,69 +54,39 @@ public class MainActivity extends AppCompatActivity {
         btnTraditional.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-                alertDialog.setTitle("Traditionnalles");
-                alertDialog.setMessage("Voulez-vous choisir une recette traditionnelle ?");
-                alertDialog.setPositiveButton("oui", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MainActivity.this, TraditionalActivity.class);
-                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), btnTraditional.getText(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                alertDialog.setNegativeButton("non", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                alertDialog.show();
+
+                Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
+                extras.putString("cat", "traditionnelles");
+                extras.putString("titre", "Les recettes traditionnelles");
+                intent.putExtras(extras);
+                startActivity(intent);
+
             }
         });
         final Button btnSeason= (Button)findViewById(R.id.main_btn_season);
         btnSeason.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-                alertDialog.setTitle("C'est la saison");
-                alertDialog.setMessage("Voulez-vous choisir une recette de saison ?");
-                alertDialog.setPositiveButton("oui", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MainActivity.this, SaesonActivity.class);
-                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), btnSeason.getText(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                alertDialog.setNegativeButton("non", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                alertDialog.show();
+
+                Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
+                extras.putString("cat", "saison");
+                extras.putString("titre", "Les recettes de saison");
+                intent.putExtras(extras);
+                startActivity(intent);
+
             }
         });
         final Button btnGluten= (Button)findViewById(R.id.main_btn_gluten);
         btnGluten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-                alertDialog.setTitle("Sans gluten");
-                alertDialog.setMessage("Voulez-vous choisir une recette sans gluten ?");
-                alertDialog.setPositiveButton("oui", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MainActivity.this, GlutenActivity.class);
-                        startActivity(intent);
-                        Toast.makeText(getApplicationContext(), btnGluten.getText(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                alertDialog.setNegativeButton("non", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                alertDialog.show();
+
+                Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
+                extras.putString("cat", "gluten");
+                extras.putString("titre", "Les recettes sans gluten");
+                intent.putExtras(extras);
+                startActivity(intent);
+
             }
         });
     }

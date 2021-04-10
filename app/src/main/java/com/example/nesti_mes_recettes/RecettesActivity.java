@@ -4,44 +4,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 import adapter.RecipeAdapter;
 import entity.Recipe;
 import model.GlutenViewModel;
 
-public class TraditionalActivity extends AppCompatActivity {
+public class RecettesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_traditional);
+        setContentView(R.layout.activity_recettes);
+        Bundle extras = getIntent().getExtras();
+        String cat = extras.getString("cat");
+        String titre = extras.getString("titre");
 
-        final Button btnRetour = (Button)findViewById(R.id.btn_retour_traditional);
-        btnRetour.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                TraditionalActivity.this.finish();
-            }
-        });
+        TextView textView = this.findViewById(R.id.rectteActivity_Title);
+        textView.setText(titre);
 
         GlutenViewModel viewModel = new ViewModelProvider
                 .AndroidViewModelFactory(this.getApplication())
                 .create(GlutenViewModel.class);
 
-        viewModel.getRecipes("traditionnelles").observe(this, recipes -> {
-            ListView list_view = (ListView) findViewById(R.id.tradition_listView);
+        viewModel.getRecipes(cat).observe(this, recipes -> {
+            ListView list_view = (ListView) findViewById(R.id.recettesActivity_listView);
 
             RecipeAdapter adapter = new RecipeAdapter(
                     this,
@@ -50,7 +40,6 @@ public class TraditionalActivity extends AppCompatActivity {
             list_view.setAdapter(adapter);
         });
 
+
     }
-
-
 }

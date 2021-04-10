@@ -9,12 +9,13 @@
 
     <CheckedTextView
         android:id="@+id/checkedTextView"
-        android:layout_width="390dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeightSmall"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:gravity="center_vertical"
+        android:checkMark="?android:attr/textCheckMark"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
 
         android:clickable="true"
         android:text="@string/checkedtextview"

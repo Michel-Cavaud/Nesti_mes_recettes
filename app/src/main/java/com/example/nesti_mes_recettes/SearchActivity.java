@@ -15,6 +15,7 @@ public class SearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
@@ -23,11 +24,16 @@ public class SearchActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(editText.getText().length() > 2){
+                    String term = editText.getText().toString();
+                    Intent intent = new Intent(SearchActivity.this, ResultActivity.class);
+                    intent.putExtra("term", term);
+                    startActivity(intent);
+                }else{
+                    Toast t = Toast.makeText(getApplicationContext(), "Au moins 3 caractères pour la recherche", Toast.LENGTH_SHORT);
+                    t.show();
+                }
 
-                String term = editText.getText().toString();
-                Intent intent = new Intent(SearchActivity.this, ResultActivity.class);
-                intent.putExtra("term", term);
-                startActivity(intent);
             }
         });
     }

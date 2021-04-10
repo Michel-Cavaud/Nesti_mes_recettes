@@ -1,8 +1,10 @@
 package adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.text.LineBreaker;
 import android.os.Build;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +12,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.example.nesti_mes_recettes.R;
+import com.example.nesti_mes_recettes.TabRecipeActivity;
 
 import java.util.ArrayList;
 
@@ -49,6 +53,23 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
 
         ImageView imageStar= result.findViewById(R.id.line_recipe_imgStar);
         imageStar.setImageResource(one_recipe.getImgStarId());
+
+        result.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), TabRecipeActivity.class);
+                // création du paquet
+                Bundle extras = new Bundle();
+                // Remplir le paquet
+                extras.putInt("id", one_recipe.getId());
+                extras.putString("name", one_recipe.getTitle());
+                // Le paquet est attaché à l'intention
+                intent.putExtras(extras);
+                // L'activité est lancée
+                getContext().startActivity(intent);
+            }
+        });
 
         return result;
     }

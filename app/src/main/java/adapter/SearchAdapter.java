@@ -1,8 +1,6 @@
 package adapter;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,8 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.nesti_mes_recettes.GlutenActivity;
-import com.example.nesti_mes_recettes.MainActivity;
 import com.example.nesti_mes_recettes.R;
 import com.example.nesti_mes_recettes.TabRecipeActivity;
 

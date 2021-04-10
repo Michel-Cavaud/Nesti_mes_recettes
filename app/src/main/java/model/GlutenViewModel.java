@@ -2,7 +2,6 @@ package model;
 
 import android.app.Application;
 import android.util.Log;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,8 +14,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.nesti_mes_recettes.GlutenActivity;
-import com.example.nesti_mes_recettes.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,7 +21,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapter.RecipeAdapter;
 import entity.Recipe;
 
 public class GlutenViewModel extends AndroidViewModel {

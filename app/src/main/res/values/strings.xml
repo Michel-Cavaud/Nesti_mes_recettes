@@ -44,4 +44,5 @@
     <string name="vider_la_liste">Vider la liste</string>
     <string name="check">Check</string>
     <string name="checkedtextview">CheckedTextView</string>
+    <string name="titre_cat_gorie">Titre Catégorie</string>
 </resources>
