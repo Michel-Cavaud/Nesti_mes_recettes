@@ -22,31 +22,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Bundle extras = new Bundle();
+
+        // bouton facile
         final Button btnEasy = (Button)findViewById(R.id.main_btn_easy);
         btnEasy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-               /* final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
-                alertDialog.setTitle("Facile à faire");
-                alertDialog.setMessage("Voulez-vous choisir une recette facile à faire ?");
-                alertDialog.setPositiveButton("oui", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {*/
-                        Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
-                        extras.putString("cat", "facile");
-                        extras.putString("titre", "Les recettes faciles");
-                        intent.putExtras(extras);
-                        startActivity(intent);
-                     /*  Toast.makeText(getApplicationContext(), btnEasy.getText(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                alertDialog.setNegativeButton("non", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                alertDialog.show();*/
+                Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
+                extras.putString("cat", "facile");
+                extras.putString("titre", "Les recettes faciles");
+                intent.putExtras(extras);
+                startActivity(intent);
             }
         });
 
@@ -54,39 +40,35 @@ public class MainActivity extends AppCompatActivity {
         btnTraditional.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
                 extras.putString("cat", "traditionnelles");
                 extras.putString("titre", "Les recettes traditionnelles");
                 intent.putExtras(extras);
                 startActivity(intent);
-
             }
         });
+
         final Button btnSeason= (Button)findViewById(R.id.main_btn_season);
         btnSeason.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
                 extras.putString("cat", "saison");
                 extras.putString("titre", "Les recettes de saison");
                 intent.putExtras(extras);
                 startActivity(intent);
-
             }
         });
+
         final Button btnGluten= (Button)findViewById(R.id.main_btn_gluten);
         btnGluten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
                 extras.putString("cat", "gluten");
                 extras.putString("titre", "Les recettes sans gluten");
                 intent.putExtras(extras);
                 startActivity(intent);
-
             }
         });
     }
@@ -131,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i( "LogNesti", "Menu : Contact");
                 t = Toast.makeText(this, "Contact", Toast.LENGTH_SHORT);
                 t.show();
-                intent = new Intent(MainActivity.this, TabRecipeActivity.class);
-                startActivity(intent);
+                //intent = new Intent(MainActivity.this, TabRecipeActivity.class);
+                //startActivity(intent);
                 break;
             case R.id.menu_team:
                 Log.i( "LogNesti", "Menu : Equipe");
@@ -147,7 +129,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
-
 }

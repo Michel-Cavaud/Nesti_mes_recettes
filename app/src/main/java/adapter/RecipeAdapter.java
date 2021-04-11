@@ -20,6 +20,7 @@ import androidx.annotation.RequiresApi;
 
 import com.example.nesti_mes_recettes.R;
 import com.example.nesti_mes_recettes.TabRecipeActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -49,7 +50,16 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
         author.setText(one_recipe.getAuthor());
 
         ImageView imageView = result.findViewById(R.id.line_recipe_imgView_recipe);
-        imageView.setImageResource(one_recipe.getImgId());
+       // imageView.setImageResource(one_recipe.getImgId());
+
+       /* Picasso.get()
+                .load("https://www.tutorialspoint.com/images/tp-logo-diamond.png")
+                .into(imageView);*/
+        Picasso.get()
+                .load("http://192.168.0.38/Nesti3/public/images/upload/tartelettesauchocolatblancetkiwis.jpg")
+
+                .into(imageView);
+
 
         ImageView imageStar= result.findViewById(R.id.line_recipe_imgStar);
         imageStar.setImageResource(one_recipe.getImgStarId());
