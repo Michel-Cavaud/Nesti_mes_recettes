@@ -23,6 +23,7 @@ public class RecettesActivity extends AppCompatActivity {
         String cat = extras.getString("cat");
         String titre = extras.getString("titre");
 
+
         TextView textView = this.findViewById(R.id.rectteActivity_Title);
         textView.setText(titre);
 

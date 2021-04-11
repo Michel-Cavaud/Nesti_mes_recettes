@@ -31,6 +31,8 @@ public class TabRecipeActivity extends AppCompatActivity {
         // on extrait chaque données de extras
         int id = extras.getInt("id");
         String name = extras.getString("name");
+        int nb = extras.getInt("nb");
+        String temps = extras.getString("temps");
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager(), id);
         ViewPager viewPager = findViewById(R.id.view_pager);
@@ -51,6 +53,9 @@ public class TabRecipeActivity extends AppCompatActivity {
 
         TextView title = this.findViewById(R.id.abRecipe_txtViewTitle);
         title.setText(name);
-
+      TextView nbTx = this.findViewById(R.id.frament_tx_nb);
+        nbTx.setText("Recette pour : " + nb + " personnes");
+        TextView tempsTx = this.findViewById(R.id.frament_tx_temps);
+        tempsTx.setText("Préparation en : " + temps);
     }
 }

@@ -72,6 +72,8 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
                 // Remplir le paquet
                 extras.putInt("id", one_recipe.getId());
                 extras.putString("name", one_recipe.getTitle());
+                extras.putInt("nb", one_recipe.getNb());
+                extras.putString("temps", one_recipe.getTemps());
                 // Le paquet est attaché à l'intention
                 intent.putExtras(extras);
                 // L'activité est lancée

@@ -2,6 +2,12 @@ package com.example.nesti_mes_recettes;
 
 import android.app.Application;
 
+/**
+ * Class pour les variables globales
+ * Cette classe est ajoutée au fichier AndroidMAnifest.xml
+ * Les variable sont instenciée dans la classe MainActivity
+ * Et peuvent être lu dans les autres classes
+ */
 public class GlobalsVariable extends Application {
     private String urlAPI;
     private  String urlImage;

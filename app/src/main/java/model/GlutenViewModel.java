@@ -91,6 +91,9 @@ public class GlutenViewModel extends AndroidViewModel {
                 r.setId(object_JSON.getInt("id"));
                 r.setTitle(object_JSON.getString("title"));
                 r.setAuthor(object_JSON.getString("author"));
+                r.setNb(object_JSON.getInt("nb"));
+                r.setTemps(object_JSON.getString("temps"));
+
 
                 String  img = object_JSON.getString("img");
                 r.setImg(img);

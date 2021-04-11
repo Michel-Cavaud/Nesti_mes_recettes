@@ -125,6 +125,7 @@ public class PageViewModel extends AndroidViewModel {
 
             JSONObject  recette = response.getJSONObject("recipe");
 
+
             JSONArray ingredients = response.getJSONArray("ingredients");
             List<Ingredient> ingredientsTemp = new ArrayList<Ingredient>();
             for(int i = 0; i < ingredients.length(); i++) {

@@ -11,6 +11,9 @@ public class Recipe {
     int difficulty;
     String ingredients;
     String preparations;
+    int nb;
+    String temps;
+
 
     @Override
     public String toString(){
@@ -22,6 +25,16 @@ public class Recipe {
                 '}';
 
     }
+
+    public int getNb() {
+        return nb;
+    }
+
+    public void setNb(int nb) {
+        this.nb = nb;
+    }
+
+
 
     public String getIngredients() {
         return ingredients;
@@ -93,5 +106,20 @@ public class Recipe {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getTemps() {
+        String retour;
+        String[] split = temps.split(":");
+        if(split[0] == "00"){
+            retour = split[1];
+        }else{
+            retour = Integer.parseInt(split[0]) * 60 + Integer.parseInt(split[1]) + " mn";
+        }
+        return retour;
+    }
+
+    public void setTemps(String temps) {
+        this.temps = temps;
     }
 }
