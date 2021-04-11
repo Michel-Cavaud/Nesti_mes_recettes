@@ -14,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nesti_mes_recettes.GlobalsVariable;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -44,13 +45,12 @@ public class GlutenViewModel extends AndroidViewModel {
     }
 
     private void loadRecipes(String type) {
-        String url = "http://192.168.0.38/Nesti3CI4/public/index.php/api/category/" + type;
+        final GlobalsVariable globalsVariable = (GlobalsVariable)getApplication().getApplicationContext();
+        String url = globalsVariable.getUrlAPI() + "category/" + type;
         requestApi(url);
     }
 
     private void requestApi(String url){
-        //String url = "http://192.168.0.38/Nesti3CI4/public/index.php/api/category/gluten";
-
         final RequestQueue requestQueue = Volley.newRequestQueue(getApplication().getApplicationContext());
 
         JsonArrayRequest arrayRequest = new JsonArrayRequest(
@@ -92,8 +92,8 @@ public class GlutenViewModel extends AndroidViewModel {
                 r.setTitle(object_JSON.getString("title"));
                 r.setAuthor(object_JSON.getString("author"));
 
-                int img = this.getResourceImage(object_JSON.getString("img"));
-                r.setImgId(img);
+                String  img = object_JSON.getString("img");
+                r.setImg(img);
 
                 int s = this.getResourceImage("star_" + object_JSON.getString("diff"));
                 r.setImgStarId(s);

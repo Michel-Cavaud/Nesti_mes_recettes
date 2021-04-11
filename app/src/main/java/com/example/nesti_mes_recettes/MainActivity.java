@@ -20,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //ajout des variable globales à partir de la class GloblasVariable qui est ajouté au fichier AndroidManifest.xml
+        final GlobalsVariable globalsVariable = (GlobalsVariable) getApplicationContext();
+        globalsVariable.setUrlAPI("http://192.168.0.38/Nesti3CI4/public/index.php/api/");
+        globalsVariable.setUrlImage("http://192.168.0.38/Nesti3/public/images/upload/");
+
         setContentView(R.layout.activity_main);
         Bundle extras = new Bundle();
 

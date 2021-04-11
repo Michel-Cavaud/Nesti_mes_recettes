@@ -6,7 +6,7 @@ public class Recipe {
     String title;
     String cat;
     String author;
-    int imgId;
+    String img;
     int imgStarId;
     int difficulty;
     String ingredients;
@@ -17,7 +17,7 @@ public class Recipe {
         return "Repice{" +
                 "Cat='" + cat + '\'' +
                 ", titles='" + title + '\'' +
-                ", imgId=" + imgId +
+                ", imgId=" + img +
                 ", author='" + author + '\'' +
                 '}';
 
@@ -87,11 +87,11 @@ public class Recipe {
         this.author = author;
     }
 
-    public int getImgId() {
-        return imgId;
+    public String getImg() {
+        return img;
     }
 
-    public void setImgId(int imgId) {
-        this.imgId = imgId;
+    public void setImg(String img) {
+        this.img = img;
     }
 }

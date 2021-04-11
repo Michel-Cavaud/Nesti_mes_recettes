@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.example.nesti_mes_recettes.GlobalsVariable;
 import com.example.nesti_mes_recettes.R;
 import com.example.nesti_mes_recettes.TabRecipeActivity;
 import com.squareup.picasso.Picasso;
@@ -52,12 +53,9 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
         ImageView imageView = result.findViewById(R.id.line_recipe_imgView_recipe);
        // imageView.setImageResource(one_recipe.getImgId());
 
-       /* Picasso.get()
-                .load("https://www.tutorialspoint.com/images/tp-logo-diamond.png")
-                .into(imageView);*/
+        final GlobalsVariable globalsVariable = (GlobalsVariable) getContext().getApplicationContext();
         Picasso.get()
-                .load("http://192.168.0.38/Nesti3/public/images/upload/tartelettesauchocolatblancetkiwis.jpg")
-
+                .load( globalsVariable.getUrlImage() + one_recipe.getImg())
                 .into(imageView);
 
 
