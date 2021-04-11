@@ -21,7 +21,7 @@ import adapter.IngredientAdapter;
 import data.sqlite.TableCart;
 import entity.Ingredient;
 
-public class listCourseActivity extends AppCompatActivity {
+public class listCourseActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

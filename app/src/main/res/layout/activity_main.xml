@@ -12,6 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/txt_titre"
         android:textAlignment="center"
         android:textSize="@dimen/size_txt_title_h1" />

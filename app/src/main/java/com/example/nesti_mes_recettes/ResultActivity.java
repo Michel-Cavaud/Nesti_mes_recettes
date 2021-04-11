@@ -15,7 +15,7 @@ import entity.Recipe;
 import model.GlutenViewModel;
 import model.SearchViewModel;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

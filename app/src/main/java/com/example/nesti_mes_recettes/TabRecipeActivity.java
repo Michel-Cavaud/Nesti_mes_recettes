@@ -53,7 +53,7 @@ public class TabRecipeActivity extends AppCompatActivity {
 
         TextView title = this.findViewById(R.id.abRecipe_txtViewTitle);
         title.setText(name);
-      TextView nbTx = this.findViewById(R.id.frament_tx_nb);
+        TextView nbTx = this.findViewById(R.id.frament_tx_nb);
         nbTx.setText("Recette pour : " + nb + " personnes");
         TextView tempsTx = this.findViewById(R.id.frament_tx_temps);
         tempsTx.setText("Préparation en : " + temps);

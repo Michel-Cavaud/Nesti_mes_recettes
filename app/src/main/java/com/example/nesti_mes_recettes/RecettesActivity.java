@@ -13,7 +13,7 @@ import adapter.RecipeAdapter;
 import entity.Recipe;
 import model.GlutenViewModel;
 
-public class RecettesActivity extends AppCompatActivity {
+public class RecettesActivity extends MenuActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

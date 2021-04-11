@@ -3,8 +3,7 @@ package com.example.nesti_mes_recettes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,10 +11,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         final GlobalsVariable globalsVariable = (GlobalsVariable) getApplicationContext();
         globalsVariable.setUrlAPI("http://192.168.0.38/Nesti3CI4/public/index.php/api/");
         globalsVariable.setUrlImage("http://192.168.0.38/Nesti3/public/images/upload/");
+
 
         setContentView(R.layout.activity_main);
         Bundle extras = new Bundle();
@@ -83,19 +84,19 @@ public class MainActivity extends AppCompatActivity {
      * Gestion ouverture/fermeture du menu général
      * @param  Menu
      * @return boolean true
-     */
+
     @Override
     public boolean onCreateOptionsMenu(Menu pMenu) {
         MenuInflater inflater = this.getMenuInflater();
         inflater.inflate(R.menu.menu_general, pMenu);
         return true;
-    }
+    }*/
 
     /**
      * Lance une action en fonction de l'élément du menu sélectionné
      * @param pItem menuItem
      * @return
-     */
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem pItem){
         Toast t;
@@ -134,5 +135,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return true;
-    }
+    }*/
 }
