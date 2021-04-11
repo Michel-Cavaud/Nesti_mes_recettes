@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nesti_mes_recettes.GlobalsVariable;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -45,12 +46,12 @@ public class SearchViewModel extends AndroidViewModel {
         return recipes;
     }
     private void loadRecipes(String recherche) {
-        String url = "http://192.168.0.38/Nesti3CI4/public/index.php/api/search/" + recherche;
+        final GlobalsVariable globalsVariable = (GlobalsVariable)getApplication().getApplicationContext();
+        String url = globalsVariable.getUrlAPI() + "search/" + recherche;
         requestApi(url);
     }
 
     private void requestApi(String url){
-        //String url = "http://192.168.0.38/Nesti3CI4/public/index.php/api/category/gluten";
 
         final RequestQueue requestQueue = Volley.newRequestQueue(getApplication().getApplicationContext());
 
@@ -91,6 +92,8 @@ public class SearchViewModel extends AndroidViewModel {
                 Recipe r = new Recipe();
                 r.setId(object_JSON.getInt("id_recettes"));
                 r.setTitle(object_JSON.getString("nom_recettes"));
+                r.setTemps(object_JSON.getString("temps_recettes"));
+                r.setNb(object_JSON.getInt("nombre_personne_recettes"));
 
                 recipesTemp.add(r);
             }

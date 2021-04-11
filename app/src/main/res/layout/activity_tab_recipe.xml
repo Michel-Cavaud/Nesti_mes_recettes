@@ -24,12 +24,12 @@
         <TextView
             android:id="@+id/frament_tx_nb"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="31dp" />
 
         <TextView
             android:id="@+id/frament_tx_temps"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="31dp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"

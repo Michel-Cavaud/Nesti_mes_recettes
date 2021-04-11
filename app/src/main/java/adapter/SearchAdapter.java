@@ -43,8 +43,6 @@ public class SearchAdapter extends ArrayAdapter<Recipe> {
         btnVoir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast t = Toast.makeText(getContext().getApplicationContext(), "ID: " + one_recipe.getId() + " " + one_recipe.getTitle(), Toast.LENGTH_SHORT);
-                t.show();
 
                 Intent intent = new Intent(getContext(), TabRecipeActivity.class);
                 // création du paquet
@@ -52,6 +50,9 @@ public class SearchAdapter extends ArrayAdapter<Recipe> {
                 // Remplir le paquet
                 extras.putInt("id", one_recipe.getId());
                 extras.putString("name", one_recipe.getTitle());
+                extras.putString("temps", one_recipe.getTemps());
+                extras.putInt("nb", one_recipe.getNb());
+
                 // Le paquet est attaché à l'intention
                 intent.putExtras(extras);
                 // L'activité est lancée

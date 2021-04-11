@@ -20,6 +20,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.nesti_mes_recettes.GlobalsVariable;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -83,7 +84,8 @@ public class PageViewModel extends AndroidViewModel {
     private void loadData(int id) {
         ingredients = new MutableLiveData<List<Ingredient>>();
         steps = new MutableLiveData<List<String>>();
-        String url = "http://192.168.0.38/Nesti3CI4/public/index.php/api/recipe/" + id;
+        final GlobalsVariable globalsVariable = (GlobalsVariable)getApplication().getApplicationContext();
+        String url = globalsVariable.getUrlAPI() + "recipe/" + id;
 
         requestApi(url);
     }
@@ -124,7 +126,6 @@ public class PageViewModel extends AndroidViewModel {
             //JSONObject object_JSON = response.getJSONObject(0);
 
             JSONObject  recette = response.getJSONObject("recipe");
-
 
             JSONArray ingredients = response.getJSONArray("ingredients");
             List<Ingredient> ingredientsTemp = new ArrayList<Ingredient>();
