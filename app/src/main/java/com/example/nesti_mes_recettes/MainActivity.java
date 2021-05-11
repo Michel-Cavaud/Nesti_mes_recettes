@@ -23,8 +23,8 @@ public class MainActivity extends MenuActivity {
 
         //ajout des variable globales à partir de la class GloblasVariable qui est ajouté au fichier AndroidManifest.xml
         final GlobalsVariable globalsVariable = (GlobalsVariable) getApplicationContext();
-        globalsVariable.setUrlAPI("http://192.168.0.38/Nesti3CI4/public/index.php/api/");
-        globalsVariable.setUrlImage("http://192.168.0.38/Nesti3/public/images/upload/");
+        globalsVariable.setUrlAPI("http://192.168.0.39/Nesti3CI4/public/index.php/api/");
+        globalsVariable.setUrlImage("http://192.168.0.39/Nesti3/public/images/upload/");
 
 
         setContentView(R.layout.activity_main);
@@ -36,7 +36,7 @@ public class MainActivity extends MenuActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
-                extras.putString("cat", "facile");
+                extras.putString("cat", "4");
                 extras.putString("titre", "Les recettes faciles");
                 intent.putExtras(extras);
                 startActivity(intent);
@@ -48,7 +48,7 @@ public class MainActivity extends MenuActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
-                extras.putString("cat", "traditionnelles");
+                extras.putString("cat", "2");
                 extras.putString("titre", "Les recettes traditionnelles");
                 intent.putExtras(extras);
                 startActivity(intent);
@@ -60,7 +60,7 @@ public class MainActivity extends MenuActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
-                extras.putString("cat", "saison");
+                extras.putString("cat", "1");
                 extras.putString("titre", "Les recettes de saison");
                 intent.putExtras(extras);
                 startActivity(intent);
@@ -72,7 +72,7 @@ public class MainActivity extends MenuActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RecettesActivity.class);
-                extras.putString("cat", "gluten");
+                extras.putString("cat", "3");
                 extras.putString("titre", "Les recettes sans gluten");
                 intent.putExtras(extras);
                 startActivity(intent);
